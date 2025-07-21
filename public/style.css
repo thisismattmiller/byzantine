@@ -1,0 +1,50 @@
+/* styles */
+/* called by your view template */
+
+html{
+  height:100%;
+}
+
+body {
+  font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+  margin: 2em;
+  background: darkgrey;
+  height:100%;
+}
+
+
+#pdf{
+  min-height:800px;
+  min-width:650px;
+  height:800px;
+  width:650px;
+  margin-left:auto;
+  margin-right:auto;
+  background-color:white;
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  border: solid 1px lightgrey;
+}
+
+#about{
+min-width: 640px;
+    width: 635px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: lightgrey;
+    padding: 5px;
+}
+
+#source{
+min-width: 640px;
+    width: 635px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background: whitesmoke;
+    padding: 5px;
+    font-size: 10px;
+  
+}

@@ -1,0 +1,94 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!-- You might want to try something fancier: -->
+<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
+<!-- pug: https://pugjs.org/ -->
+<!-- haml: http://haml.info/ -->
+<!-- hbs(handlebars): http://handlebarsjs.com/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Glitch!</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css">
+    
+    <!-- import the webpage's client-side javascript file -->
+    <script src="/client.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+  </head>
+  <body>
+   
+    <style>
+      #pdf{
+        overflow:hidden;        
+      }
+      p{
+
+        font-family: 'VT323', monospace;
+        margin:2%;
+
+      }
+      
+      #insert-img{        
+        background-image: url(https://s3.amazonaws.com/byzantine-pdf/images/<%=medImg1%>); 
+        background-size: contain;
+        background-repeat: no-repeat;
+        height:10%;
+        width:15%;
+    margin-left: 3%;
+    margin-top: 3%;
+        
+        
+      }
+    
+    </style>
+    
+    
+    
+    <div id="pdf">
+        <div id="insert-img">
+
+        </div>
+         <p>
+           <%=text1['text']%>
+        </p>
+          <img style="height:300px; width:auto; margin:auto; display:block" src="https://s3.amazonaws.com/byzantine-pdf/images/<%=fullImg1%>">
+         <p>
+           <%=text2['text']%>
+        </p>
+    </div>
+    
+    <div id="about"> 
+      Byzantine PDF. A new Frankenstein PDF created on each reload. Made using 1000 government PDFs created from the <a href="https://blogs.loc.gov/thesignal/2019/03/in-the-librarys-web-archives-sorting-through-a-set-of-us-government-pdfs/">Library of Congress web archives holdings.</a> -by <a href="https://twitter.com/thisismmiller">Matt Miller</a>
+    </div>
+    <div id="source">
+      
+      <div>
+        
+      Listed below is the source materials for this page. The URL likely no longer works. To access the PDF download <a href="https://labs.loc.gov/experiments/webarchive-datasets/">"1000 .gov PDF Dataset"</a> and look in the data/ directory for the PDF.
+      </div>
+      <% Object.keys(source).forEach(function(src) { %>
+        <%- src %>
+        <ul>
+          <li>Orginal URL: <%=source[src]['url']%></li>  
+          <li>Web Archive: <%=source[src]['id']%>.pdf</li>  
+        </ul>
+      <% }); %>
+
+    </div>
+
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+
+  </body>
+</html>
